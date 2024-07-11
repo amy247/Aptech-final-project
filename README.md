@@ -1,70 +1,100 @@
-README.md
-# Breast Cancer Prediction using Machine Learning
-This repository contains the code and resources for a machine learning project focused on predicting breast cancer outcomes. The project utilizes various machine learning algorithms to classify tumors as benign or malignant based on features extracted from digitized images of breast mass.
+# Breast Cancer Prediction Project
+
+## Overview
+This project focuses on predicting breast cancer outcomes using various machine learning algorithms to improve early detection and reduce mortality rates. The study evaluates models such as Decision Tree, Logistic Regression, Random Forest, Gradient Boosting, Support Vector Machine (SVM), and K-Nearest Neighbors (KNN) to predict breast cancer with high accuracy. Logistic Regression achieved the highest performance among these models.
 
 ## Table of Contents
-Introduction
-Problem Statement
-Data Source & Description
-Data Cleaning
-Data Exploration
-Feature Engineering
-Feature Selection
-Model Building
-Results and Discussion
-Confusion Matrix
-Model Deployment
-Conclusion
-Future Scope
-**Introduction**
-Breast cancer is a significant health concern worldwide, ranking as the second most lethal cancer among women. Early detection plays a crucial role in improving treatment outcomes and reducing mortality rates. This project explores the application of machine learning algorithms to develop predictive models for early breast cancer detection.
+- [Introduction](#introduction)
+- [Dataset](#dataset)
+- [Data Cleaning](#data-cleaning)
+- [Data Exploration](#data-exploration)
+- [Feature Engineering](#feature-engineering)
+- [Model Building](#model-building)
+- [Results and Discussion](#results-and-discussion)
+- [Confusion Matrix](#confusion-matrix)
+- [Model Deployment](#model-deployment)
+- [Conclusion](#conclusion)
+- [How to Run](#how-to-run)
+- [Dependencies](#dependencies)
 
-**Problem Statement**
-The project aims to build a predictive framework to classify breast tumors as benign or malignant using machine learning techniques. Traditional diagnostic methods are often invasive and time-consuming. Therefore, the goal is to create a non-invasive, accurate, and efficient tool for early breast cancer detection.
+## Introduction
+Breast cancer is one of the most common cancers among women worldwide, with early detection being crucial for effective treatment. This project aims to develop a machine learning-based predictive framework to accurately classify breast cancer tumors as benign or malignant. By evaluating various algorithms, we aim to identify the most effective model for early breast cancer detection, thus improving patient outcomes and enabling personalized treatment strategies.
 
-**Data Source & Description**
-The dataset used for this project is the Wisconsin Diagnostic Breast Cancer (WDBC) dataset obtained from the UCI Machine Learning Repository. It consists of 569 instances with 32 features, including patient ID, diagnosis (Malignant or Benign), and 30 real-valued features computed from digitized images.
+## Dataset
+The dataset used in this project is the Wisconsin Diagnostic Breast Cancer (WDBC) dataset, available at [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+%28diagnostic%29). It contains 569 instances with 32 attributes, including the diagnosis (M for malignant and B for benign) and 30 real-valued features computed for each cell nucleus.
 
-**Dataset Source: Wisconsin Diagnostic Breast Cancer (WDBC)**
+## Data Cleaning
+- Checked for null values (none found).
+- Dropped the ID number column as it was not useful for model building.
 
-**Data Cleaning**
-The dataset was imported into Jupyter Notebook and checked for missing values. No missing values were found. The ID column was dropped as it was not useful for model building.
+## Data Exploration
+- Visualized the distribution of the diagnosis using a count plot.
+- Plotted histograms for each feature to understand their distributions.
 
-**Data Exploration**
-Visualized the distribution of diagnoses using a count plot.
-Plotted histograms for each feature to understand their distributions.
-Feature Engineering
-Encoded the diagnosis column (Malignant = 1, Benign = 0) using LabelEncoder.
-Standardized features using StandardScaler to ensure zero mean and unit variance.
-Feature Selection
-Selected features based on their correlation with the diagnosis using a correlation matrix. Features with low correlation were excluded to reduce noise.
+## Feature Engineering
+- Encoded the diagnosis column to numerical values (M = 1, B = 0) using LabelEncoder.
+- Standardized features using StandardScaler to ensure they have a mean of 0 and a standard deviation of 1.
+- Performed feature selection by analyzing the correlation of each feature with the diagnosis and dropping features with low correlation.
 
-**Model Building**
-Implemented several machine learning models:
+## Model Building
+Developed and evaluated several machine learning models, including:
+- Logistic Regression
+- Decision Tree Classifier
+- Random Forest Classifier
+- Gradient Boosting Classifier
+- Support Vector Classifier (SVC)
+- K-Nearest Neighbors (KNN) Classifier
 
-Logistic Regression
-Decision Tree Classifier
-Random Forest Classifier
-Gradient Boosting Classifier
-Support Vector Classifier (SVC)
-K-Nearest Neighbors (KNN) Classifier
-Evaluated models based on metrics like accuracy, precision, recall, F1 score, and ROC AUC to identify the best performing model.
+## Results and Discussion
+| Model               | Accuracy | Precision | Recall   | F1 Score | ROC AUC  |
+|---------------------|----------|-----------|----------|----------|----------|
+| Logistic Regression | 0.964912 | 0.953488  | 0.953488 | 0.953488 | 0.962660 |
+| Decision Tree       | 0.938596 | 0.950000  | 0.883721 | 0.915663 | 0.927776 |
+| Random Forest       | 0.956140 | 0.952381  | 0.930233 | 0.941176 | 0.951032 |
+| Gradient Boosting   | 0.956140 | 0.952381  | 0.930233 | 0.941176 | 0.951032 |
+| Support Vector Machine | 0.956140 | 0.975000  | 0.906977 | 0.939759 | 0.946446 |
+| K-Nearest Neighbors | 0.964912 | 0.975610  | 0.930233 | 0.952381 | 0.958074 |
 
-**Results and Discussion**
-Logistic Regression emerged as the best model with an accuracy of 96.49%.
-Detailed evaluation metrics and comparison with other models are provided in the report.
-Confusion Matrix
-The confusion matrix illustrates the performance of each model in terms of correctly and incorrectly predicted instances of benign and malignant cases.
+Logistic Regression emerged as the best model, achieving the highest accuracy and demonstrating robust performance across all metrics.
 
-**Model Deployment**
-Deployed the Logistic Regression model using Streamlit, allowing real-time predictions of breast cancer diagnoses. Users can input relevant features to obtain predictions instantly.
+## Confusion Matrix
+The confusion matrix for each model displays the instances of correct and incorrect predictions, highlighting the number of true positives, true negatives, false positives, and false negatives.
 
-**Conclusion**
-This study demonstrates the effectiveness of machine learning in breast cancer prediction, particularly through Logistic Regression, which achieved high accuracy and robust performance across all metrics. The deployment of this model via Streamlit provides a practical tool for early diagnosis, enhancing patient outcomes and treatment strategies.
+## Model Deployment
+The Logistic Regression model was deployed using Streamlit, an open-source app framework. This deployment enables users to input relevant features and obtain real-time predictions on whether a breast cancer diagnosis is benign or malignant.
 
-**Future Scope**
-Future research could explore additional features and advanced techniques to further improve predictive accuracy and broaden the application of machine learning in oncology.
+## Conclusion
+This study utilized various machine learning algorithms to develop predictive models for breast cancer diagnosis. Logistic Regression emerged as the optimal model, achieving the highest accuracy of 96.49%. The deployment through Streamlit provides a practical tool for real-time breast cancer diagnosis, enhancing early detection efforts and improving patient outcomes.
 
-**Contact Me Via**
-Email: Fridayamy2020@gmail.com
-Friday Amarachi Promise
+## How to Run
+1. Clone the repository:
+   
+   git clone https://github.com/Amy247/Aptech-final-project.git
+   
+2. Navigate to the project directory:
+   
+   cd breast-cancer-prediction
+   
+3. Install the required dependencies:
+   
+   pip install -r requirements.txt
+   
+4. Run the Streamlit app:
+   
+   streamlit run app.py
+   
+
+## Dependencies
+- Python 3.8+
+- NumPy
+- pandas
+- scikit-learn
+- matplotlib
+- joblib
+- Streamlit
+
+Feel free to explore the code, experiment with different models, and contribute to the project!
+
+---
+
+This README provides an overview of the project, detailing the key aspects, how to set up and run the project, and the dependencies required. Adjust the repository URL and other details as needed to match your specific project setup.
