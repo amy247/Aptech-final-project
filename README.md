@@ -93,8 +93,6 @@ This study utilized various machine learning algorithms to develop predictive mo
 - joblib
 - Streamlit
 
-Feel free to explore the code, experiment with different models, and contribute to the project!
-
----
-
-This README provides an overview of the project, detailing the key aspects, how to set up and run the project, and the dependencies required. Adjust the repository URL and other details as needed to match your specific project setup.
+## Contact Me Via
+Name: Friday Amarachi Promise
+Email: fridayamy2020@gmail.com
