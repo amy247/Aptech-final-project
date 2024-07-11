@@ -1,7 +1,8 @@
-#Breast Cancer Prediction using Machine Learning
+README.md
+### Breast Cancer Prediction using Machine Learning
 This repository contains the code and resources for a machine learning project focused on predicting breast cancer outcomes. The project utilizes various machine learning algorithms to classify tumors as benign or malignant based on features extracted from digitized images of breast mass.
 
-Table of Contents
+# Table of Contents
 Introduction
 Problem Statement
 Data Source & Description
